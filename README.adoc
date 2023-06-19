@@ -1,0 +1,6 @@
+:document-title: 
+
+= RBGO.tech: Types & Symbols
+
+Simple common types and symbols used in rbgo.tech's C/C++ code.
+
