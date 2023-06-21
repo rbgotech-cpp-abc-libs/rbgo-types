@@ -1,0 +1,22 @@
+{
+	"name": "rbgotech/rbgo-types",
+	"version": "1.0.0",
+	"description": "Common types and symbols.",
+	"keywords": "types, symbols, scalars",
+	"repository":{
+		"type": "git",
+		"url": "https://github.com/rbgotech-cpp-libs/all-dat_rbgo-types.git"
+	},
+	"authors":[{
+		"name": "Robert Goossens (rbgo)",
+		"email": "rbgo.web@gmail.com",
+		"homepage": "https://github.com/rbgo",
+		"maintainer": true
+	}],
+	"license": "MIT",
+	"homepage": "https://github.com/rbgotech-cpp-libs/all-dat_rbgo-types",
+	"dependencies": {
+	},
+	"frameworks": "*",
+	"platforms": "*"
+}
