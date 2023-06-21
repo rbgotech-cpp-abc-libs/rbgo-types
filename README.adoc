@@ -1,6 +1,44 @@
-:document-title: 
+:document-title: rbgo-types
+:table-caption: off
 
-= RBGO.tech: Types & Symbols
+= *rbgo-types*
 
-Simple common types and symbols used in rbgo.tech's C/C++ code.
+[.big]"`**_Common types and symbols._**`"
 
+[caption="" cols="25h,~m" frame=all grid=all width=50%]
+|===
+
+|last update
+|20230621
+
+|language
+|C++
+
+|namespace
+|rbgo
+
+|library ref
+|rbgotech/rbgo-types
+
+|entry points
+|rbgo-types.h
+
+|dependencies
+|-
+
+|environment
+|VSCode, Platformio
+
+|platform
+|all, native
+
+|framework
+|all
+|===
+
+=== Description
+
+This repository consists of a single header file.
+
+It is included in most of RBGO.tech C++ libraries,
+so it is centralized here.
