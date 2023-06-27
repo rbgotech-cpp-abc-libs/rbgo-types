@@ -1,5 +1,8 @@
 #pragma once
 
+#include <stdlib.h> //Rnd(srand,rand)
+#include <time.h>	//Rnd(time)
+
 namespace rbgo {
 
 typedef	char					Ti8;
@@ -15,5 +18,17 @@ typedef unsigned long long		Tu64;
 typedef float					Tf32;
 typedef double					Tf64;
 typedef long double				Tf96;
+
+
+class Rnd {
+	Tu32 mn, mx;
+	Tu8 p256;
+	Tu32 r10th, ri;
+public:
+	Rnd(Tu32 mn, Tu32 mx);
+	Tu32 get();
+private:
+	Tu32 gen();
+};
 
 }//ns
