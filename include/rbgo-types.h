@@ -26,6 +26,8 @@ class Rnd {
 	Tu32 r10th, ri;
 public:
 	Rnd(Tu32 mn, Tu32 mx);
+	void altmn(Tu32 mn);
+	void altmx(Tu32 mx);
 	Tu32 get();
 private:
 	Tu32 gen();
