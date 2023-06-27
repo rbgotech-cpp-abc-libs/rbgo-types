@@ -1,8 +1,8 @@
 {
 	"name": "rbgotech/rbgo-types",
 	"version": "1.0.0",
-	"description": "Common types and symbols.",
-	"keywords": "types, symbols, scalars",
+	"description": "Common types, symbols and tools.",
+	"keywords": "types, symbols, scalars, tools",
 	"repository":{
 		"type": "git",
 		"url": "https://github.com/rbgotech-cpp-libs/all-dat_rbgo-types.git"
