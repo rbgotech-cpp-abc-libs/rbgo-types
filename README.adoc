@@ -3,7 +3,7 @@
 
 = *rbgo-types*
 
-[.big]"`**_Common types and symbols._**`"
+[.big]"`**_Common types, symbols and tools._**`"
 
 [caption="" cols="25h,~m" frame=all grid=all width=50%]
 |===
@@ -38,7 +38,7 @@
 
 === Description
 
-This repository consists of a single header file.
+This repository contains basic types, symbols and tools.
 
 It is included in most of RBGO.tech C++ libraries,
 so it is centralized here.
