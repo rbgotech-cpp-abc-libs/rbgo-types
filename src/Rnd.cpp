@@ -22,6 +22,14 @@ Rnd::Rnd(Tu32 _mn, Tu32 _mx){
 	srand(time(0));
 }
 
+void altmn(Tu32 _mn){
+	mn = _mn;
+}
+
+void altmx(Tu32 _mx){
+	mx = _mx;
+}
+
 Tu32 Rnd::get(){
 	return gen() % (mx - mn + 1) + mn;
 }
