@@ -22,11 +22,11 @@ Rnd::Rnd(Tu32 _mn, Tu32 _mx){
 	srand(time(0));
 }
 
-void altmn(Tu32 _mn){
+void Rnd::altmn(Tu32 _mn){
 	mn = _mn;
 }
 
-void altmx(Tu32 _mx){
+void Rnd::altmx(Tu32 _mx){
 	mx = _mx;
 }
 
