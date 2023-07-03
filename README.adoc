@@ -1,15 +1,15 @@
-:document-title: rbgo-types
+:document-title: rbgo-types: Common types and symbols.
 :table-caption: off
 
 = *rbgo-types*
 
-[.big]"`**_Common types, symbols and tools._**`"
+[.big]"`**_Common types and symbols._**`"
 
 [caption="" cols="25h,~m" frame=all grid=all width=50%]
 |===
 
 |last update
-|20230621
+|20230703
 
 |language
 |C++
@@ -30,7 +30,7 @@
 |VSCode, Platformio
 
 |platform
-|all, native
+|all
 
 |framework
 |all
@@ -38,7 +38,6 @@
 
 === Description
 
-This repository contains basic types, symbols and tools.
+This repository contains basic types and symbols.
 
-It is included in most of RBGO.tech C++ libraries,
-so it is centralized here.
+It is included in most of RBGO.tech C++ libraries.
