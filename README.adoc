@@ -24,7 +24,7 @@
 |rbgo-types.h
 
 |dependencies
-|-
+|Read comments inside rbgo-types.h
 
 |environment
 |VSCode, Platformio
