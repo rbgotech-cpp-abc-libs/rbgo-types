@@ -9,7 +9,7 @@
 |===
 
 |last update
-|20230703
+|20230706
 
 |language
 |C++
@@ -24,7 +24,7 @@
 |rbgo-types.h
 
 |dependencies
-|Read comments inside rbgo-types.h
+|<stdint.h>
 
 |environment
 |VSCode, Platformio
@@ -36,8 +36,122 @@
 |all
 |===
 
-=== Description
+=== **Description**
 
-This repository contains basic types and symbols.
-
+This repository contains basic types and symbols. +
 It is included in most of RBGO.tech C++ libraries.
+
+=== **Todo list before including**
+
+**▲ Define symbol `RBGOTYPEDEFS`**
+
+.Inside platformio.ini example:
+----
+[env:mcu-target]
+build_flags =
+    -D RBGOTYPEDEFS=0x0007
+----
+
+.Meaning of the bits
+[options="header" caption="" cols="1h,2m,2m" frame=all grid=all width=50%]
+|===
+|bit
+|typedef
+|from
+
+3+^m|Low Byte
+
+|1
+|Ti8 Tu8
+|int8_t, uint8_t
+
+|2
+|Ti16 Tu16
+|int16_t, uint16_t
+
+|3
+|Ti Tu
+|int, unsigned int
+
+|4
+|Ti32 Tu32
+|int32_t, uint32_t
+
+|5
+|Ti64 Tu64
+|int64_t, uint64_t
+
+|6
+|<reserved>
+|
+
+|7
+|<reserved>
+|
+
+|8
+|<reserved>
+|
+
+3+^m|High Byte
+
+|1
+|<reserved>
+|
+
+|2
+|<reserved>
+|
+
+|3
+|<reserved>
+|
+
+|4
+|<reserved>
+|
+
+|5
+|<reserved>
+|
+
+|6
+|TfLD
+|long double
+
+|7
+|Tf64
+|double
+
+|8
+|Tf32
+|float
+|===
+
+.NOTES
+----
+● So the example with the mcu-target set bits 1-3, which will only
+typedef up to 16 bit integers and whatever the natural int is for that target.
+● Assert: Do not use undefined/reserved fields.
+● Look inside platformio.ini for various build_flags to test with.
+----
+
+**▲ #include rbgo-types.h**
+
+**▲ Compile for target**
+
+==== **Why?**
+
+There is no way to reliably automate detection for a target
+platform of what types and their bit width are supported, and
+then only typedef the appropriate types.
+
+Knowing the specs of a platform upfront and set RBGOTYPEDEFS
+according to it is a more reliable way.
+
+If inside the dependency tree of an application, a type happens
+to be used, that is canceled out by RBGOTYPEDEFS for a target platform,
+a compile error will occur, preventing faulty type usage to slip in, 
+which otherwise could cause unforeseen costly mistakes.
+
+
