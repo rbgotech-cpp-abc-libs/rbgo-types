@@ -5,7 +5,7 @@
 
 [.big]"`**_Common types and symbols._**`"
 
-[caption="" cols="25h,~m" frame=all grid=all width=50%]
+[caption="" cols="25h,~m" frame=all grid=all width=100%]
 |===
 
 |last update
@@ -52,78 +52,95 @@ build_flags =
     -D RBGOTYPEDEFS=0x0007
 ----
 
-.Meaning of the bits
-[options="header" caption="" cols="1h,2m,2m" frame=all grid=all width=50%]
+.Bit numbers inside RBGOTYPEDEFS and according typedefs
+[options="header" caption="" cols="1h,1m,2m,2m" frame=all grid=all width=100%]
 |===
 |bit
+|symbol
 |typedef
 |from
 
-3+^m|Low Byte
+4+^m|Low Byte
 
 |1
+|RTDF_Ti8
 |Ti8 Tu8
 |int8_t, uint8_t
 
 |2
+|RTDF_Ti16
 |Ti16 Tu16
 |int16_t, uint16_t
 
 |3
+|RTDF_Ti
 |Ti Tu
 |int, unsigned int
 
 |4
+|RTDF_Ti32
 |Ti32 Tu32
 |int32_t, uint32_t
 
 |5
+|RTDF_Ti64
 |Ti64 Tu64
 |int64_t, uint64_t
 
 |6
 |<reserved>
 |
+|
 
 |7
 |<reserved>
+|
 |
 
 |8
 |<reserved>
 |
+|
 
-3+^m|High Byte
+4+^m|High Byte
 
 |1
 |<reserved>
+|
 |
 
 |2
 |<reserved>
 |
+|
 
 |3
 |<reserved>
+|
 |
 
 |4
 |<reserved>
 |
+|
 
 |5
 |<reserved>
 |
+|
 
 |6
+|RTDF_TfLD
 |TfLD
 |long double
 
 |7
+|RTDF_Tf64
 |Tf64
 |double
 
 |8
+|RTDF_Tf32
 |Tf32
 |float
 |===
@@ -140,18 +157,55 @@ typedef up to 16 bit integers and whatever the natural int is for that target.
 
 **▲ Compile for target**
 
-==== **Why?**
+=== **Macros**
 
-There is no way to reliably automate detection for a target
-platform of what types and their bit width are supported, and
+These macros are to read RBGOTYPEDEFS minimalistic, that is with minimal code.
+
+.Defined macros
+[options="header" caption="" cols="1m,4m" frame=all grid=all width=100%]
+|===
+|name
+|task
+
+|RTDF(f)
+|(!!(RBGOTYPEDEFS & (f)))
+
+|RTDFa(f)
+|(RTDF(f) && RTDF(g))
+
+|RTDFa2(f,g)
+|(RTDF(f) && RTDF(g))
+
+|RTDFa3(f,g,h)
+|(RTDF(f) && RTDF(g) && RTDF(h))
+
+|RTDFa4(f,g,h,i)
+|(RTDF(f) && RTDF(g) && RTDF(h) && RTDF(i))
+
+|RTDFo2(f,g)
+|(RTDF(f) \|\| RTDF(g))
+
+|RTDFo3(f,g,h)
+|(RTDF(f) \|\| RTDF(g) \|\| RTDF(h))
+
+|RTDFo4(f,g,h,i)
+|(RTDF(f) \|\| RTDF(g) \|\| RTDF(h) \|\| RTDF(i))
+|===
+
+=== **Why?**
+
+There is no way to reliably/conveniently automate detection inside a header file
+for a target platform of what types and their bit width are supported, and
 then only typedef the appropriate types.
 
 Knowing the specs of a platform upfront and set RBGOTYPEDEFS
-according to it is a more reliable way.
+according to it is a hard defined way. +
+RBGOTYPEDEFS must represent what types are supported by a platform, and it is why
+it must be set inside platformio.ini for a particular compile target.
 
 If inside the dependency tree of an application, a type happens
 to be used, that is canceled out by RBGOTYPEDEFS for a target platform,
 a compile error will occur, preventing faulty type usage to slip in, 
-which otherwise could cause unforeseen costly mistakes.
+which otherwise could cause unforeseen and possibly costly mistakes.
 
 
