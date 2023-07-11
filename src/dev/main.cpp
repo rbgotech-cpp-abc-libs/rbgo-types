@@ -56,7 +56,7 @@ NOTES:
 void typedefTypesSizeRange(){
 
 			printf("%-20s %6s %4s %22s  %-24s\n", "TYPE", "DEF", "BITS", "MIN", "MAX");
-#if RTDF(RTDF_Ti8)
+#if RTD_Ti8
 			printf("%-20s %6s %4u %22d  %-24d\n",	"int8_t",		"Ti8",	sizeof(rbgo::Ti8)*8,	INT8_MIN, INT8_MAX);
 			printf("%-20s %6s %4u %22u  %-24u\n",	"uint8_t",		"Tu8",	sizeof(rbgo::Tu8)*8,	0, UINT8_MAX);
 #else
@@ -64,7 +64,7 @@ void typedefTypesSizeRange(){
 			printf("%-20s %6s        <NO-TYPEDEF>\n",	"uint8_t",		"Tu8");
 #endif
 
-#if RTDF(RTDF_Ti16)
+#if RTD_Ti16
 			printf("%-20s %6s %4u %22d  %-24d\n",	"int16_t",		"Ti16",	sizeof(rbgo::Ti16)*8,	INT16_MIN, INT16_MAX);
 			printf("%-20s %6s %4u %22u  %-24u\n",	"uint16_t",		"Tu16",	sizeof(rbgo::Tu16)*8,	0, UINT16_MAX);
 #else
@@ -72,7 +72,7 @@ void typedefTypesSizeRange(){
 			printf("%-20s %6s        <NO-TYPEDEF>\n",	"uint16_t",		"Tu16");
 #endif
 
-#if RTDF(RTDF_Ti)
+#if RTD_Ti
 			printf("%-20s %6s %4u %22d  %-24d\n",	"int",			"Ti",	sizeof(rbgo::Ti)*8,		INT_MIN, INT_MAX);
 			printf("%-20s %6s %4u %22u  %-24u\n",	"unsigned int",	"Tu",	sizeof(rbgo::Tu)*8,		0, UINT_MAX);
 #else
@@ -80,7 +80,7 @@ void typedefTypesSizeRange(){
 			printf("%-20s %6s        <NO-TYPEDEF>\n",	"unsigned int",	"Tu");
 #endif
 
-#if RTDF(RTDF_Ti32)
+#if RTD_Ti32
 			printf("%-20s %6s %4u %22d  %-24d\n",	"int32_t",		"Ti32",	sizeof(rbgo::Ti32)*8,	INT32_MIN, INT32_MAX);
 			printf("%-20s %6s %4u %22u  %-24u\n",	"uint32_t",		"Tu32",	sizeof(rbgo::Tu32)*8,	0, UINT32_MAX);
 #else
@@ -88,7 +88,7 @@ void typedefTypesSizeRange(){
 			printf("%-20s %6s        <NO-TYPEDEF>\n",	"uint32_t",		"Tu32");
 #endif
 
-#if RTDF(RTDF_Ti64)
+#if RTD_Ti64
 			printf("%-20s %6s %4u %22ld  %-24ld\n",	"int64_t",		"Ti64",	sizeof(rbgo::Ti64)*8,	INT64_MIN, INT64_MAX);
 			printf("%-20s %6s %4u %22lu  %-24lu\n",	"uint64_t",		"Tu64",	sizeof(rbgo::Tu64)*8,	0, UINT64_MAX);
 #else
@@ -96,19 +96,19 @@ void typedefTypesSizeRange(){
 			printf("%-20s %6s        <NO-TYPEDEF>\n",	"uint64_t",		"Tu64");
 #endif
 
-#if RTDF(RTDF_TfLD)
+#if RTD_TfLD
 			printf("%-20s %6s %4u %22E  %-24E\n",	"float",		"Tf32",	sizeof(rbgo::Tf32)*8,	FLT_MIN, FLT_MAX);
 #else
 			printf("%-20s %6s        <NO-TYPEDEF>\n",	"float",		"Tf32");
 #endif
 
-#if RTDF(RTDF_Tf64)
+#if RTD_Tf64
 			printf("%-20s %6s %4u %22E  %-24E\n",	"double",		"Tf64",	sizeof(rbgo::Tf64)*8,	DBL_MIN, DBL_MAX);
 #else
 			printf("%-20s %6s        <NO-TYPEDEF>\n",	"double",		"Tf64");
 #endif
 
-#if RTDF(RTDF_Tf32)
+#if RTD_Tf32
 			printf("%-20s %6s %4u %22E  %-24E\n",	"long double",	"TfLD",	sizeof(rbgo::TfLD)*8,	LDBL_MIN, LDBL_MAX);
 #else
 			printf("%-20s %6s        <NO-TYPEDEF>\n",	"long double",	"TfLD");
