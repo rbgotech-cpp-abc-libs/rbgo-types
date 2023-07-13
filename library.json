@@ -5,7 +5,7 @@
 	"keywords": "types, symbols, scalars",
 	"repository":{
 		"type": "git",
-		"url": "https://github.com/rbgotech-cpp-libs/all-dat_rbgo-types.git"
+		"url": "https://github.com/rbgotech-cpp-abc-libs/rbgo-types.git"
 	},
 	"authors":[{
 		"name": "Robert Goossens (rbgo)",
@@ -14,7 +14,7 @@
 		"maintainer": true
 	}],
 	"license": "MIT",
-	"homepage": "https://github.com/rbgotech-cpp-libs/all-dat_rbgo-types",
+	"homepage": "https://github.com/rbgotech-cpp-abc-libs/rbgo-types",
 	"dependencies": {
 	},
 	"frameworks": "*",
