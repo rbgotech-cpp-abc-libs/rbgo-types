@@ -1,3 +1,4 @@
+#ifdef RBGOTYPES_DEVMAIN
 #include <stdlib.h>//setbuf, system, exit, atoi
 #include <stdio.h>//puts, printf, scanf
 
@@ -115,3 +116,4 @@ void typedefTypesSizeRange(){
 #endif
 }
 
+#endif//RBGOTYPES_DEVMAIN
